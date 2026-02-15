@@ -1,54 +1,20 @@
  #include <iostream>
 using namespace std;
-int main(){
+int fibbo(int g){
+    //base case
+    if(g==0 or g==1){
+        return g;
+    }
+    return fibbo(g-1)+fibbo(g-2);
+}
+int main() {
     int n;
-    cout<<"enter no.";
-
     cin>>n;
-    int m=(n/2)+1;
-    for(int i=1;i<=(n/2)+1;i++){
-        //space 
-        for (int j=1;j<=m-i+1;j++){
-            cout<<"* ";
-        }
-        for (int j=1;j<=i-1;j++){
-            cout<<"  ";
-        }
-        
-        for (int j=1;j<=i-2;j++){
-            cout<<"  ";
-        }
-        if(i!=1){
-        for (int j=m-i+1;j>=1;j--){
-            cout<<"* ";
-        }}
-        else{
-            for (int j=m-i+1-1;j>=1;j--){
-            cout<<"* ";
-        }}
-        cout<<endl;
+    int k=0;
+    for(int i=0;i<=n-1;i++){
+      k=k+fibbo(i);
     }
-    for(int i=(n/2);i>=1;i--){
-        //space 
-        for (int j=1;j<=(n/2+1)-i+1;j++){
-            cout<<"* ";
-        }
-        for (int j=1;j<=i-1;j++){
-            cout<<"  ";
-        }
-        
-        for (int j=1;j<=i-2;j++){
-            cout<<"  ";
-        }
-        if(i!=1){
-        for (int j=(n/2+1)-i+1;j>=1;j--){
-            cout<<"* ";
-        }}
-        else{
-            for (int j=(n/2+1)-i+1-1;j>=1;j--){
-            cout<<"* ";
-        }}
-        cout<<endl;
-    }
+    cout<<k<<" ";
+    
     return 0;
 }
