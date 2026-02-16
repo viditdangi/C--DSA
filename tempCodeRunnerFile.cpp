@@ -1,20 +1,22 @@
- #include <iostream>
+#include<iostream>
+#include<cmath>
 using namespace std;
-int fibbo(int g){
-    //base case
-    if(g==0 or g==1){
-        return g;
-    }
-    return fibbo(g-1)+fibbo(g-2);
+int main(){
+int Min;
+cin>>Min;
+int Max;
+cin>>Max;
+int Step;
+cin>>Step;
+int k=(Min+Max/Step)+1;
+	for(int F=0;F<=Max;F++){
+		if(F/20==0){
+		int C=(5/9)*(F-32);
+		cout<<C;
+		}
+	else{
+		cout<<"Nahi ho raha";
+	}
 }
-int main() {
-    int n;
-    cin>>n;
-    int k=0;
-    for(int i=0;i<=n-1;i++){
-      k=k+fibbo(i);
-    }
-    cout<<k<<" ";
-    
     return 0;
 }
